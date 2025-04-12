@@ -21,8 +21,8 @@ void i2c_task(void *p) {
     gpio_pull_up(I2C_SDA_GPIO);
     gpio_pull_up(I2C_SCL_GPIO);
 
-    // reset device to its default state
-    // colocando 1 no bit 7 do registrador 0x6B
+    // Reseta o dispositivo para valor de fábrica
+    // colocando 1 no bit 7 do registrador 0x6B 
     uint8_t buf_write[2];
     buf_write[0] = MPUREG_PWR_MGMT_1; // registrador
     buf_write[1] = 1 << 7;            // valor
